@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Starter</title>
+  <title>@yield('title') | NERA </title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -66,12 +66,12 @@ desired effect
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Page Header
-        <small>Optional description</small>
+        @yield('pageHeader')
+        <small>@yield('description')</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> @yield('level') </a></li>
+        <li class="active">@yield('here')</li>
       </ol>
     </section>
 
@@ -170,14 +170,18 @@ desired effect
 <!-- ./wrapper -->
 
 <!-- REQUIRED JS SCRIPTS -->
-@include('admin.partials.javascript')
 
-
+<!-- jQuery 2.2.3 -->
+<script src="{{ asset('bower_components/adminlte/plugins/jQuery/jquery-2.2.3.min.js') }}" ></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="{{ asset('bower_components/adminlte/bootstrap/js/bootstrap.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('bower_components/adminlte/dist/js/app.min.js') }}"></script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
      fixed layout. -->
+
+@yield('javaascript')
 </body>
 </html>
