@@ -9,8 +9,8 @@
 
 
 ## To install this app 
-Composer install
-npm install
+-Composer install
+-npm install
 
 
 ## About Laravel
